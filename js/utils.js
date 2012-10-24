@@ -1,5 +1,4 @@
 window.utils = {
-
     // Asynchronously load templates located in separate .html files
     loadTemplate: function(views, callback) {
 
@@ -49,5 +48,47 @@ window.utils = {
     hideAlert: function() {
         $('.alert').hide();
     }
+    // loadHighwayModel: function() {
+
+    //     console.log("loading.....");
+    //     var HighwayModel, HighwayCollection;
+    //     var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/0");
+    //     var query = new esri.tasks.Query();
+    //       query.where = "1=1";
+    //       query.returnGeometry = false;
+    //       query.outFields = ["*"];
+    //       return queryTask.execute(query, function(results) {
+    //           // var s = "";
+    //           console.log(results.features.length);
+    //           for (var i = 0, il=results.features.length; i<il; i++) {
+    //               var fAttributes = results.features[i].attributes;
+    //               console.log(fAttributes);
+    //               PID = fAttributes.PID;
+    //               County = fAttributes.County;
+    //               Facility = fAttributes.Facility;
+    //               data ={
+    //                   PID: PID,
+    //                   County: County,
+    //                   Facility: Facility,
+    //                   map: null
+    //               };
+    //               console.log(PID, data);
+    //               // HighwayCollection.add({
+    //               // PID: fAttributes.PID,
+    //               // County: fAttributes.County,
+    //               // Facility: fAttributes.Facility,
+    //               // map: null
+    //               // });
+    //           // console.log("HighwayCollection", HighwayCollection);
+    //           }
+    //           // HighwayCollection.comparator = function(highway) {
+    //           //     return highway.get(PID);
+    //           // };
+    //           // HighwayCollection.sort();
+    //           // console.log("2", HighwayCollection);
+    //           // return list.render();
+    //       });
+
+    // }
 
 };

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"High",
+				"HighwayCollection"
+			],
+			[
+				"get",
+				"getByCid"
+			],
+			[
 				"COunty",
 				"allCounty"
 			],
@@ -35,6 +43,57 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "js/models/models.js",
+			"settings":
+			{
+				"buffer_size": 1344,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "// window.HighwayListView = Backbone.View.extend({\n//     initialize:function () {\n//         this.render();\n//     },\n\n//     render:function () {\n//         $(this.el).html(this.template());\n//             console.log(\"hello Highway List\");\n//         return this;\n//     }\n\n// });\n// var HighwayListView;\nwindow.HighwayListView = Backbone.View.extend({\n    // el: $(\"#sidebar>ul\"),\n    // tagName: \"ul\",\n    initialize: function() {\n      // return\n      this.collection = HighwayCollection;\n      this.render();\n    },\n    // events: {\n    //   \"click a\": \"clicked\"\n    // },\n    // clicked: function(evt) {\n    //   var cid;\n    //   evt.preventDefault();\n    //   cid = $(evt.currentTarget).data(\"id\");\n    //   return this.collection.zoomByCid(cid);\n    // },\n    render: function() {\n      // var data, template;\n      // console.log(HighwayCollection);\n      var data;\n      data = {\n        highway: this.collection.models,\n        _: _\n      };\n      console.log(data);\n      // template = _.template(viewTemplate, data);\n      // $(this.el).html(\"\");\n      // return $(this.el).append(template);\n      $(this.el).html(this.template());\n        console.log(\"hello Highway List\");\n        return this;\n    }\n  });\n\n\n\n// return new HighwayListView();\n\n",
+			"file": "js/views/highwayList.js",
+			"file_size": 1316,
+			"file_write_time": 129950638145622404,
+			"settings":
+			{
+				"buffer_size": 1261,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl/HighwayListView.html",
+			"settings":
+			{
+				"buffer_size": 28,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 2126,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/collections/highwayCollection.js",
+			"settings":
+			{
+				"buffer_size": 276,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 3671,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -123,7 +182,7 @@
 				"Package Control: Discover Packages"
 			]
 		],
-		"width": 478.0
+		"width": 536.0
 	},
 	"console":
 	{
@@ -140,24 +199,27 @@
 	},
 	"file_history":
 	[
-		"/C/inetpub/wwwroot/tod/js/models/models.js",
-		"/C/inetpub/wwwroot/tod/tpl/TransitView.html",
-		"/C/inetpub/wwwroot/tod/js/views/transitList.js",
-		"/C/inetpub/wwwroot/tod/tpl/TransitListView.html",
-		"/C/inetpub/wwwroot/tod/index.html",
 		"/C/inetpub/wwwroot/tod/tpl/HighwayView.html",
+		"/C/inetpub/wwwroot/tod/js/collections/HighwayCollection.js",
 		"/C/inetpub/wwwroot/tod/js/main.js",
+		"/C/inetpub/wwwroot/tod/js/views/transitList.js",
+		"/C/inetpub/wwwroot/tod/js/views/transit.js",
+		"/C/inetpub/wwwroot/tod/tpl/TransitListView.html",
+		"/C/inetpub/wwwroot/tod/tpl/TransitView.html",
+		"/C/inetpub/wwwroot/tod/lib/require.js",
+		"/C/inetpub/wwwroot/tod/js/text.js",
+		"/C/inetpub/wwwroot/tod/tpl/AboutView.html",
+		"/C/inetpub/wwwroot/tod/tpl/HeaderView.html",
+		"/C/inetpub/wwwroot/tod/tpl/HomeView.html",
+		"/C/inetpub/wwwroot/tod/index.html",
+		"/C/inetpub/wwwroot/tod/js/models/models.js",
 		"/C/inetpub/wwwroot/tod/tpl/HighwayListView.html",
 		"/C/inetpub/wwwroot/tod/js/views/highwayList.js",
 		"/C/inetpub/wwwroot/tod/tod.sublime-project",
-		"/C/inetpub/wwwroot/tod/tpl/HomeView.html",
 		"/C/inetpub/wwwroot/tod/js/views/highway.js",
-		"/C/inetpub/wwwroot/tod/tpl/AboutView.html",
-		"/C/inetpub/wwwroot/tod/js/views/transit.js",
 		"/C/inetpub/wwwroot/tod/css/bootstrap.css",
 		"/C/inetpub/wwwroot/tod/app/tod.js",
 		"/C/inetpub/wwwroot/tod/js/utils.js",
-		"/C/inetpub/wwwroot/tod/tpl/HeaderView.html",
 		"/C/inetpub/wwwroot/bbags/index.html",
 		"/C/inetpub/wwwroot/tod/js/views/home.js",
 		"/C/inetpub/wwwroot/tod/js/views/about.js",
@@ -171,7 +233,6 @@
 		"/C/inetpub/wwwroot/tod/lib/jquery-1.8.2.js",
 		"/C/inetpub/wwwroot/tod/lib/jquery-1.8.2.min.js",
 		"/C/inetpub/wwwroot/tod/lib/underscore.js",
-		"/C/inetpub/wwwroot/tod/lib/require.js",
 		"/T/GIS/Staff/Crary/python/impSpecialToPdf.py",
 		"/T/GIS/Staff/Burrell/_EDITS/readme.md",
 		"/T/GIS/Staff/Burrell/_EDITS/readme.txt",
@@ -265,9 +326,7 @@
 		"/C/inetpub/wwwroot/geddyapp/todo_app/app/views/todos/show.html.ejs",
 		"/C/Users/acrary/Desktop/mraad-chicago-f18f2b3 (1)/mraad-chicago-f18f2b3/ChicagoLib/src/com/esri/controllers/ActiveFeatureController.as",
 		"/C/Users/acrary/AppData/Roaming/npm/node_modules/geddy/lib/app.js",
-		"/C/inetpub/wwwroot/geddyapp/todo_app/config/router.js",
-		"/T/Layers/Locators/buildstreetmaploc.py",
-		"/T/GIS/Staff/Crary/pythonscripts/okidefquerry.py"
+		"/C/inetpub/wwwroot/geddyapp/todo_app/config/router.js"
 	],
 	"find":
 	{
@@ -285,6 +344,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"TransitListView",
+			"transitListView",
+			"states",
+			"stateCollection",
+			"ListView",
+			"state",
+			"State",
+			"StateCollection",
+			"state",
+			"featureA",
+			"uni.png",
+			"chuck.jpg",
 			"#",
 			"highway",
 			"Highway",
@@ -400,8 +471,701 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "js/models/models.js",
+					"settings":
+					{
+						"buffer_size": 1344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								979,
+								1053
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/views/highwayList.js",
+					"settings":
+					{
+						"buffer_size": 1261,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								756,
+								756
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "tpl/HighwayListView.html",
+					"settings":
+					{
+						"buffer_size": 28,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27,
+								27
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 2126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2070,
+								2070
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/collections/highwayCollection.js",
+					"settings":
+					{
+						"buffer_size": 276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								241,
+								241
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 3671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2662,
+								2662
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 969.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -459,16 +1223,64 @@
 		"selected_items":
 		[
 			[
+				"main",
+				"js/main.js"
+			],
+			[
+				"hi",
+				"js/views/highwayList.js"
+			],
+			[
+				"transit",
+				"js/views/transitList.js"
+			],
+			[
+				"transitview",
+				"tpl/TransitListView.html"
+			],
+			[
+				"transitvi",
+				"tpl/TransitView.html"
+			],
+			[
+				"text",
+				"js/text.js"
+			],
+			[
+				"re",
+				"lib/require.js"
+			],
+			[
 				"index",
 				"index.html"
 			],
 			[
-				"about",
-				"tpl/AboutView.html"
+				"in",
+				"index.html"
+			],
+			[
+				"transi",
+				"tpl/TransitView.html"
+			],
+			[
+				"head",
+				"tpl/HeaderView.html"
+			],
+			[
+				"",
+				"index.html"
 			],
 			[
 				"home",
 				"tpl/HomeView.html"
+			],
+			[
+				"model",
+				"js/models/models.js"
+			],
+			[
+				"about",
+				"tpl/AboutView.html"
 			],
 			[
 				"trani",
@@ -479,24 +1291,12 @@
 				"css/bootstrap.css"
 			],
 			[
-				"hi",
-				"js/views/highway.js"
-			],
-			[
 				"high",
 				"tpl/HighwayView.html"
 			],
 			[
 				"tran",
 				"js/views/transit.js"
-			],
-			[
-				"",
-				"js/views/highway.js"
-			],
-			[
-				"model",
-				"js/models/models.js"
 			],
 			[
 				"highway",

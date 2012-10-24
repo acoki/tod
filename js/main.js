@@ -11,8 +11,10 @@ var AppRouter = Backbone.Router.extend({
     },
 
     initialize: function () {
+        console.log("doit");
         this.headerView = new HeaderView();
         $('.header').html(this.headerView.el);
+        console.log("loading.....");
     },
 
     home: function (id) {
@@ -21,15 +23,6 @@ var AppRouter = Backbone.Router.extend({
             console.log("hey homey");
         }
         $('#content').html(this.homeView.el);
-        this.headerView.selectMenuItem('home-menu');
-    },
-
-	list: function() {
-        var countyList = new Highway();
-        countyList.fetch({success: function(){
-            $("#content").html(new HighwayView({model: countyList}).el);
-            console.log(countyList);
-        }});
         this.headerView.selectMenuItem('home-menu');
     },
 
@@ -79,5 +72,6 @@ utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'Highw
     app = new AppRouter();
     Backbone.history.start();
 });
+// utils.loadHighwayModel();
 
 
