@@ -46,7 +46,8 @@ var AppRouter = Backbone.Router.extend({
         if (!this.highwayListView) {
             this.highwayListView = new HighwayListView();
         }
-        $('#content').html(this.highwayListView.el);
+        var highway = new HighwayCollection();
+        $("#content").html(new HighwayListView({model: highway}).el);
         this.headerView.selectMenuItem('highway-menu');
     },
 
@@ -73,5 +74,12 @@ utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'Highw
     Backbone.history.start();
 });
 // utils.loadHighwayModel();
-
+// list: function(page) {
+//         var p = page ? parseInt(page, 10) : 1;
+//         var wineList = new WineCollection();
+//         wineList.fetch({success: function(){
+//             $("#content").html(new WineListView({model: wineList, page: p}).el);
+//         }});
+//         this.headerView.selectMenuItem('home-menu');
+//     },
 

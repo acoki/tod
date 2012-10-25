@@ -4,15 +4,15 @@ window.HighwayListView = Backbone.View.extend({
     },
 
     render:function () {
-      this.collection = HighwayCollection;
-      var highway = this.collection.models;
-      var len = highway.length;
+      // var highway = this.hc;
+      console.log("hc", hc);
+      var len = hc.length;
       console.log("len", len);
         $(this.el).html('<ul class="thumbnails"></ul>');
 
-        for (var i = 0, il=347; i<il; i++) {
-            $('.thumbnails', this.el).append(new HighwayListItemView({model: highway[i]}).render().el);
-        }
+        // for (var i = 0, il=len; i<il; i++) {
+        //     $('.thumbnails', this.el).append(new HighwayListItemView({model: hc[i]}).render().el);
+        // }
         return this;
     }
 
