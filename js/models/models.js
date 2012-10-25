@@ -1,19 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
-// window.
-var HighwayModel = Backbone.Model.extend({
-    defaults: {
-          PID: "",
-          County: "",
-          Facility: "",
-          Location: "",
-          Description: "",
-          map: null
-        },
-
-    initialize: function() {
-      console.log('this model has been initialized');
-      var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/0");
+function init () {
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/0");
       var query = new esri.tasks.Query();
         query.where = "1=1";
         query.returnGeometry = false;
@@ -32,8 +20,8 @@ var HighwayModel = Backbone.Model.extend({
                 Location = fAttributes.Location;
                 Description = fAttributes.Description;
                 
-                // data ={
-                HighwayCollection.add ={
+                data ={
+                // this.hc.add ={
                     PID: PID,
                     County: County,
                     Facility: Facility,
@@ -41,25 +29,44 @@ var HighwayModel = Backbone.Model.extend({
                     Description: Description,
                     map: null
                 };
-                // test the collection
-                // var hc1 = new HighwayCollection();
-                // console.log(hc1);
+                // data ={
+                this.hc.add({
+                    PID: PID,
+                    County: County,
+                    Facility: Facility,
+                    Location: Location,
+                    Description: Description,
+                    map: null
+                });
+                // console.log(data);
             }
 
         });
+}
 
+window.HighwayModel = Backbone.Model.extend({
+    defaults: {
+          PID: "",
+          County: "",
+          Facility: "",
+          Location: "",
+          Description: "",
+          map: null
+        },
+
+    initialize: function() {
+      // console.log('this model has been initialized');
     }
-
+    
 });
 
-// window.
-var HighwayCollection = Backbone.Collection.extend({
+window.HighwayCollection = Backbone.Collection.extend({
   model: HighwayModel
-
+  
 });
 
-dojo.addOnLoad(function () {
-    var hc = new HighwayCollection();
-    var hm = new HighwayModel();
+dojo.addOnLoad(init);
+this.hc = new HighwayCollection();
+// console.log(hc);
 
-});
+

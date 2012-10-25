@@ -6,8 +6,8 @@ window.HighwayListView = Backbone.View.extend({
     render:function () {
       this.collection = HighwayCollection;
       var highway = this.collection.models;
-      // var len = highway.length;
-      // console.log(len);
+      var len = highway.length;
+      console.log("len", len);
         $(this.el).html('<ul class="thumbnails"></ul>');
 
         for (var i = 0, il=347; i<il; i++) {
