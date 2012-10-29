@@ -38,6 +38,15 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
                     Description: Description,
                     map: null
                 });
+                // this.hcbutler.add({
+                //     PID: PID,
+                //     County: County,
+                //     Facility: Facility,
+                //     Location: Location,
+                //     Description: Description,
+                //     map: null
+                // });
+
                 // console.log(data);
             }
 
@@ -69,5 +78,12 @@ dojo.addOnLoad(init);
 this.hc = new HighwayCollection();
 this.hm = new HighwayModel();
 console.log(hc);
+// this.hcbutler = new HighwayCollection(
+//     _.where(this.hc, {County: 'Butler'})
+//     );
+// console.log("hcbutler", hcbutler);
+
+
+
 
 

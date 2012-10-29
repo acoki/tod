@@ -7,7 +7,8 @@ var AppRouter = Backbone.Router.extend({
         "transit"           : "transit",
         "highwayList"       : "highwayList",
         "transitList"       : "transitList",
-        "transitListView"       : "transitListView"
+        "transitListView"       : "transitListView",
+        "highwayListView"   : "highwayListView"
     },
 
     initialize: function () {
@@ -46,8 +47,7 @@ var AppRouter = Backbone.Router.extend({
         if (!this.highwayListView) {
             this.highwayListView = new HighwayListView();
         }
-        var highway = new HighwayCollection();
-        $("#content").html(new HighwayListView({model: highway}).el);
+        $('#content').html(this.highwayListView.el);
         this.headerView.selectMenuItem('highway-menu');
     },
 
