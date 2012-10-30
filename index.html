@@ -22,22 +22,20 @@
     <div class="container"></div>
         <div class="row-fluid">
             <div id="content" class="span12">
-                <script id="highwayListView" type="text/template">
-                    
-                     <script id="highwayListView" type="text/template">
-                        console.log("template loaded!");
-                         <h1><%= PID %><span><%= Facility %></span></h1>
-                         <div><%= Location %></div>
-                         <dl>
-                             <dt>Description:</dt><dd><%= Description %></dd>
-                         </dl>
-                </script>
+                <!-- <<div id="highway"></div> -->
             </div>
         </div>
-        <div id="contacts"></div>
-                
+        <div id="highway"></div>
         <footer class="footer">
         </footer>
+    <script id="highwayListView" type="text/template">
+    <h2><%= PID %><span><%= Facility %></span></h2>
+        <dl>
+            <dt>Location:</dt><br/><dd><%= Location %></dd> 
+            <dt>Description:</dt><br/><dd><%= Description %></dd>
+            <dt>County: </dt><br/><dd><%= County %></dd>
+        </dl>    
+    </script>    
     <!-- js -->
     <script src="lib/jquery-1.8.2.js"></script>
     <script src="lib/underscore.js"></script>

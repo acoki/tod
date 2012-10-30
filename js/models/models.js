@@ -3,12 +3,11 @@ dojo.require('esri.tasks.query');
 function init () {
 var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/0");
       var query = new esri.tasks.Query();
-        query.where = "1=1";
+        query.where = "County = 'Boone'";
         query.returnGeometry = false;
         query.outFields = ["*"];
         return queryTask.execute(query, function(results) {
-            // var s = "";
-            console.log(results.features.length);
+            // console.log(results.features.length);
             for (var i = 0, il=results.features.length; i<il; i++) {
                 var fAttributes = results.features[i].attributes;
                 
@@ -16,38 +15,54 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
                 
                 PID = fAttributes.PID;
                 County = fAttributes.County;
+                Sponsor = fAttributes.Sponsor;
                 Facility = fAttributes.Facility;
                 Location = fAttributes.Location;
                 Description = fAttributes.Description;
-                
+                Project_Type = fAttributes.Project_Type;
+                AQ_Conformity = fAttributes.AQ_Conformity;
+                Future_Sale_Date = fAttributes.Future_Sale_Date;
+                FY12 = fAttributes.FY12;
+                FY13 = fAttributes.FY13;
+                FY14 = fAttributes.FY14;
+                FY15 = fAttributes.FY15;
+                TotalCost = fAttributes.TotalCost;
+
                 data ={
-                // this.hc.add ={
                     PID: PID,
                     County: County,
+                    Sponsor: Sponsor,
                     Facility: Facility,
                     Location: Location,
                     Description: Description,
+                    Project_Type: Project_Type,
+                    AQ_Conformity: AQ_Conformity,
+                    Future_Sale_Date: Future_Sale_Date,
+                    FY12: FY12,
+                    FY13: FY13,
+                    FY14: FY14,
+                    FY15: FY15,
+                    TotalCost: TotalCost,
                     map: null
                 };
-                // data ={
+                
                 this.hc.add({
                     PID: PID,
                     County: County,
+                    Sponsor: Sponsor,
                     Facility: Facility,
                     Location: Location,
                     Description: Description,
+                    Project_Type: Project_Type,
+                    AQ_Conformity: AQ_Conformity,
+                    Future_Sale_Date: Future_Sale_Date,
+                    FY12: FY12,
+                    FY13: FY13,
+                    FY14: FY14,
+                    FY15: FY15,
+                    TotalCost: TotalCost,
                     map: null
                 });
-                // this.hcbutler.add({
-                //     PID: PID,
-                //     County: County,
-                //     Facility: Facility,
-                //     Location: Location,
-                //     Description: Description,
-                //     map: null
-                // });
-
-                // console.log(data);
             }
 
         });
@@ -55,12 +70,21 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
 
 window.HighwayModel = Backbone.Model.extend({
     defaults: {
-          PID: "",
-          County: "",
-          Facility: "",
-          Location: "",
-          Description: "",
-          map: null
+        PID: "",
+        County: "",
+        Sponsor: "",
+        Facility: "",
+        Location: "",
+        Description: "",
+        Project_Type: "",
+        AQ_Conformity: "",
+        Future_Sale_Date: "",
+        FY12: "",
+        FY13: "",
+        FY14: "",
+        FY15: "",
+        TotalCost: "",
+        map: null
         },
 
     initialize: function() {
@@ -78,10 +102,7 @@ dojo.addOnLoad(init);
 this.hc = new HighwayCollection();
 this.hm = new HighwayModel();
 console.log(hc);
-// this.hcbutler = new HighwayCollection(
-//     _.where(this.hc, {County: 'Butler'})
-//     );
-// console.log("hcbutler", hcbutler);
+
 
 
 

@@ -6,16 +6,14 @@ var AppRouter = Backbone.Router.extend({
         "highway"           : "highway",
         "transit"           : "transit",
         "highwayList"       : "highwayList",
-        "transitList"       : "transitList",
-        "transitListView"       : "transitListView",
-        "highwayListView"   : "highwayListView"
+        "transitList"       : "transitList"
     },
 
     initialize: function () {
-        console.log("doit");
+        // console.log("doit");
         this.headerView = new HeaderView();
         $('.header').html(this.headerView.el);
-        console.log("loading.....");
+        // console.log("loading.....");
     },
 
     home: function (id) {
@@ -69,17 +67,9 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'HighwayListView','TransitView', 'TransitListView'], function() {
+utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'TransitView'], function() {
     app = new AppRouter();
     Backbone.history.start();
 });
-// utils.loadHighwayModel();
-// list: function(page) {
-//         var p = page ? parseInt(page, 10) : 1;
-//         var wineList = new WineCollection();
-//         wineList.fetch({success: function(){
-//             $("#content").html(new WineListView({model: wineList, page: p}).el);
-//         }});
-//         this.headerView.selectMenuItem('home-menu');
-//     },
+
 
