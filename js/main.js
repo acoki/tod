@@ -5,8 +5,16 @@ var AppRouter = Backbone.Router.extend({
         "about"             : "about",
         "highway"           : "highway",
         "transit"           : "transit",
+        "map"               : "map",
         "highwayList"       : "highwayList",
-        "butlerList"       : "butlerList",
+        "butlerList"        : "butlerList",
+        "booneList"         : "booneList",
+        "campbellList"      : "campbellList",
+        "clermontList"      : "clermontList",
+        "dearbornList"      : "dearbornList",
+        "hamiltonList"      : "hamiltonList",
+        "kentonList"        : "kentonList",
+        "warrenList"        : "warrenList",
         "transitList"       : "transitList"
     },
 
@@ -34,6 +42,14 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem('about-menu');
     },
 
+    map: function () {
+        if (!this.mapView) {
+            this.mapView = new MapView();
+        }
+        $('#content').html(this.mapView.el);
+        this.headerView.selectMenuItem('map-menu');
+    },
+
     highway: function () {
         if (!this.highwayView) {
             this.highwayView = new HighwayView();
@@ -57,6 +73,62 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem('highway-menu');
     },
 
+    booneList: function () {
+        if (!this.booneListView) {
+            this.booneListView = new BooneListView();
+        }
+        $('#content').html(this.booneListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    campbellList: function () {
+        if (!this.campbellListView) {
+            this.campbellListView = new CampbellListView();
+        }
+        $('#content').html(this.campbellListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    clermontList: function () {
+        if (!this.clermontListView) {
+            this.clermontListView = new ClermontListView();
+        }
+        $('#content').html(this.clermontListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    dearbornList: function () {
+        if (!this.dearbornListView) {
+            this.dearbornListView = new DearbornListView();
+        }
+        $('#content').html(this.dearbornListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    hamiltonList: function () {
+        if (!this.hamiltonListView) {
+            this.hamiltonListView = new HamiltonListView();
+        }
+        $('#content').html(this.hamiltonListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    kentonList: function () {
+        if (!this.kentonListView) {
+            this.kentonListView = new KentonListView();
+        }
+        $('#content').html(this.kentonListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    warrenList: function () {
+        if (!this.warrenListView) {
+            this.warrenListView = new WarrenListView();
+        }
+        $('#content').html(this.warrenListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
     transit: function () {
         if (!this.transitView) {
             this.transitView = new TransitView();
@@ -75,7 +147,7 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'TransitView'], function() {
+utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'TransitView', 'MapView'], function() {
     app = new AppRouter();
     Backbone.history.start();
 });

@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/0");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/1");
       var query = new esri.tasks.Query();
         query.where = "County = 'Boone'";
         query.returnGeometry = false;
@@ -46,7 +46,7 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
                     map: null
                 };
                 
-                this.hc.add({
+                this.boonecollection.add({
                     PID: PID,
                     County: County,
                     Sponsor: Sponsor,
@@ -68,7 +68,7 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
         });
 }
 
-window.HighwayModel = Backbone.Model.extend({
+window.BooneModel = Backbone.Model.extend({
     defaults: {
         PID: "",
         County: "",
@@ -93,15 +93,15 @@ window.HighwayModel = Backbone.Model.extend({
     
 });
 
-window.HighwayCollection = Backbone.Collection.extend({
+window.BooneCollection = Backbone.Collection.extend({
   model: HighwayModel
   
 });
 
 dojo.addOnLoad(init);
-this.hc = new HighwayCollection();
-this.hm = new HighwayModel();
-console.log(hc);
+this.boonecollection = new BooneCollection();
+this.boonemodel = new BooneModel();
+// console.log(hc);
 
 
 

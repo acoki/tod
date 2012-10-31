@@ -1,9 +1,9 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/0");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/1");
       var query = new esri.tasks.Query();
-        query.where = "County = 'Boone'";
+        query.where = "County = 'Dearborn'";
         query.returnGeometry = false;
         query.outFields = ["*"];
         return queryTask.execute(query, function(results) {
@@ -46,7 +46,7 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
                     map: null
                 };
                 
-                this.hc.add({
+                this.dearborncollection.add({
                     PID: PID,
                     County: County,
                     Sponsor: Sponsor,
@@ -68,7 +68,7 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
         });
 }
 
-window.HighwayModel = Backbone.Model.extend({
+window.DearbornModel = Backbone.Model.extend({
     defaults: {
         PID: "",
         County: "",
@@ -93,15 +93,15 @@ window.HighwayModel = Backbone.Model.extend({
     
 });
 
-window.HighwayCollection = Backbone.Collection.extend({
-  model: HighwayModel
+window.DearbornCollection = Backbone.Collection.extend({
+  model: DearbornModel
   
 });
 
 dojo.addOnLoad(init);
-this.hc = new HighwayCollection();
-this.hm = new HighwayModel();
-console.log(hc);
+this.dearborncollection = new DearbornCollection();
+this.dearbornmodel = new DearbornModel();
+// console.log(hc);
 
 
 

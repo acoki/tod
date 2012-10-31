@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/0");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/1");
       var query = new esri.tasks.Query();
         query.where = "County = 'Butler'";
         query.returnGeometry = false;
