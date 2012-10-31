@@ -6,6 +6,7 @@ var AppRouter = Backbone.Router.extend({
         "highway"           : "highway",
         "transit"           : "transit",
         "highwayList"       : "highwayList",
+        "butlerList"       : "butlerList",
         "transitList"       : "transitList"
     },
 
@@ -45,7 +46,14 @@ var AppRouter = Backbone.Router.extend({
         if (!this.highwayListView) {
             this.highwayListView = new HighwayListView();
         }
-        $('#content').html(this.highwayListView.el);
+        $('#content').html( this.highwayListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+    butlerList: function () {
+        if (!this.butlerListView) {
+            this.butlerListView = new ButlerListView();
+        }
+        $('#content').html(this.butlerListView.el);
         this.headerView.selectMenuItem('highway-menu');
     },
 
