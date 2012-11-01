@@ -6,6 +6,7 @@ var AppRouter = Backbone.Router.extend({
         "highway"           : "highway",
         "transit"           : "transit",
         "map"               : "map",
+        "highwayMap"       : "highwayMap",
         "highwayList"       : "highwayList",
         "butlerList"        : "butlerList",
         "booneList"         : "booneList",
@@ -55,6 +56,15 @@ var AppRouter = Backbone.Router.extend({
             this.mapView = new MapView();
         }
         $('#content').html(this.mapView.el);
+        this.headerView.selectMenuItem('map-menu');
+    },
+
+    highwayMap: function () {
+        if (!this.highwayMapView) {
+            this.highwayMapView = new HighwayMapView();
+            console.log("hey hmap");
+        }
+        $('#content').html( this.highwayMapView.el);
         this.headerView.selectMenuItem('map-menu');
     },
 
@@ -142,7 +152,7 @@ var AppRouter = Backbone.Router.extend({
             this.okiListView = new OkiListView();
         }
         $('#content').html(this.okiListView.el);
-        this.headerView.selectMenuItem('highway-menu');
+        this.headerView.selectMenuItem('transit-menu');
     },
 
     bcrtaList: function () {
@@ -150,7 +160,7 @@ var AppRouter = Backbone.Router.extend({
             this.bcrtaListView = new BcrtaListView();
         }
         $('#content').html(this.bcrtaListView.el);
-        this.headerView.selectMenuItem('highway-menu');
+        this.headerView.selectMenuItem('transit-menu');
     },
 
     ctcList: function () {
@@ -158,7 +168,7 @@ var AppRouter = Backbone.Router.extend({
             this.ctcListView = new CtcListView();
         }
         $('#content').html(this.ctcListView.el);
-        this.headerView.selectMenuItem('highway-menu');
+        this.headerView.selectMenuItem('transit-menu');
     },
 
     mtsList: function () {
@@ -166,7 +176,7 @@ var AppRouter = Backbone.Router.extend({
             this.mtsListView = new MtsListView();
         }
         $('#content').html(this.mtsListView.el);
-        this.headerView.selectMenuItem('highway-menu');
+        this.headerView.selectMenuItem('transit-menu');
     },
 
     sortaList: function () {
@@ -174,7 +184,7 @@ var AppRouter = Backbone.Router.extend({
             this.sortaListView = new SortaListView();
         }
         $('#content').html(this.sortaListView.el);
-        this.headerView.selectMenuItem('highway-menu');
+        this.headerView.selectMenuItem('transit-menu');
     },
 
     tankList: function () {
@@ -182,7 +192,7 @@ var AppRouter = Backbone.Router.extend({
             this.tankListView = new TankListView();
         }
         $('#content').html(this.tankListView.el);
-        this.headerView.selectMenuItem('highway-menu');
+        this.headerView.selectMenuItem('transit-menu');
     },
 
     wctaList: function () {
@@ -190,7 +200,7 @@ var AppRouter = Backbone.Router.extend({
             this.wctaListView = new WctaListView();
         }
         $('#content').html(this.wctaListView.el);
-        this.headerView.selectMenuItem('highway-menu');
+        this.headerView.selectMenuItem('transit-menu');
     },
 
     transit: function () {
@@ -211,7 +221,7 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'TransitView', 'MapView'], function() {
+utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'TransitView', 'MapView', 'HighwayMapView'], function() {
     app = new AppRouter();
     Backbone.history.start();
 });

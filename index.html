@@ -22,7 +22,7 @@
     <div class="container"></div>
         <div class="row-fluid">
             <div id="content" class="span12">
-                <!-- <<div id="highway"></div> -->
+                <div id="map"></div>
             </div>
         </div>
         
@@ -32,9 +32,14 @@
     <script id="highwayLV" type="text/template">
     <h2><%= PID %><span><%= Facility %></span></h2>
         <dl>
-            <dt>Location:</dt><br/><dd><%= Location %></dd> 
-            <dt>Description:</dt><br/><dd><%= Description %></dd>
-            <dt>County: </dt><br/><dd><%= County %></dd>
+            <dt>Location:</dt><dd><%= Location %></dd> 
+            <dt>Description:</dt><dd><%= Description %></dd>
+            <dt>Sale Date:</dt><dd><%= Future_Sale_Date %></dd>
+            <dt>FY12:</dt><dd><%= FY12 %></dd>
+            <dt>FY13:</dt><dd><%= FY13 %></dd>
+            <dt>FY14:</dt><dd><%= FY14 %></dd>
+            <dt>FY15:</dt><dd><%= FY15 %></dd>
+            <dt>TotalCost:</dt><dd><%= TotalCost %></dd>
         </dl>    
     </script>
     <script id="transitLV" type="text/template">
@@ -87,6 +92,7 @@
     <script src="js/views/home.js"></script>
     <script src="js/views/about.js"></script>
     <script src="js/views/highway.js"></script>
+    <script src="js/views/highwayMap.js"></script>
     <script src="js/views/map.js"></script>
     <script src="js/views/highwayList.js"></script>
     <script src="js/views/butlerList.js"></script>
