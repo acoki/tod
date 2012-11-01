@@ -25,7 +25,7 @@
                 <!-- <<div id="highway"></div> -->
             </div>
         </div>
-        <div id="highway"></div>
+        
         <footer class="footer">
         </footer>
     <!-- tpl -->    
@@ -37,6 +37,27 @@
             <dt>County: </dt><br/><dd><%= County %></dd>
         </dl>    
     </script>
+    <script id="transitLV" type="text/template">
+    <h2><%= PID %><span><%= FTAALI %></span></h2>
+        <dl>
+            <dt>Description:</dt>
+            <dd><%= Description %></dd>
+            <dt>State Fiscal Year: </dt>
+            <dd><%= State_FY %></dd>
+            <dt>Federal Funding: </dt>
+            <dd><%= Federal_Funding %></dd>
+            <dt>Federal Funding Source: </dt>
+            <dd><%= Federal_Funding_Source %></dd>
+            <dt>State Funding: </dt>
+            <dd><%= State_Funding %></dd>
+            <dt>State Funding Source: </dt>
+            <dd><%= State_Funding_Source %></dd>
+            <dt>Local Funding: </dt>
+            <dd><%= Local_Funding %></dd>
+            <dt>Local Funding Source: </dt>
+            <dd><%= Local_Funding_Source %></dd>
+        </dl>    
+    </script>
     <!-- js -->
     <script src="lib/jquery-1.8.2.js"></script>
     <script src="lib/underscore.js"></script>
@@ -46,6 +67,7 @@
     
     <script src="js/utils.js"></script>
     <script src="js/models/models.js"></script>
+    <script src="js/models/transitmodel.js"></script>
     <script src="js/models/butlermodel.js"></script>
     <script src="js/models/boonemodel.js"></script>
     <script src="js/models/campbellmodel.js"></script>
@@ -54,6 +76,13 @@
     <script src="js/models/hamiltonmodel.js"></script>
     <script src="js/models/kentonmodel.js"></script>
     <script src="js/models/warrenmodel.js"></script>
+    <script src="js/models/okimodel.js"></script>
+    <script src="js/models/bcrtamodel.js"></script>
+    <script src="js/models/ctcmodel.js"></script>
+    <script src="js/models/mtsmodel.js"></script>
+    <script src="js/models/sortamodel.js"></script>
+    <script src="js/models/tankmodel.js"></script>
+    <script src="js/models/wctamodel.js"></script>
     <script src="js/views/header.js"></script>
     <script src="js/views/home.js"></script>
     <script src="js/views/about.js"></script>
@@ -70,6 +99,13 @@
     <script src="js/views/warrenList.js"></script>
     <script src="js/views/transit.js"></script>
     <script src="js/views/transitList.js"></script>
+    <script src="js/views/okiList.js"></script>          
+    <script src="js/views/bcrtaList.js"></script>        
+    <script src="js/views/ctcList.js"></script>          
+    <script src="js/views/mtsList.js"></script>          
+    <script src="js/views/sortaList.js"></script>        
+    <script src="js/views/tankList.js"></script>         
+    <script src="js/views/wctaList.js"></script>   
     <script src="js/main.js"></script>
 </body>
 

@@ -15,7 +15,15 @@ var AppRouter = Backbone.Router.extend({
         "hamiltonList"      : "hamiltonList",
         "kentonList"        : "kentonList",
         "warrenList"        : "warrenList",
-        "transitList"       : "transitList"
+        "transitList"       : "transitList",
+        "okiList"           : "okiList",
+        "bcrtaList"         : "bcrtaList",
+        "ctcList"           : "ctcList",
+        "mtsList"           : "mtsList",
+        "sortaList"         : "sortaList",
+        "tankList"          : "tankList",
+        "wctaList"          : "wctaList"
+
     },
 
     initialize: function () {
@@ -126,6 +134,62 @@ var AppRouter = Backbone.Router.extend({
             this.warrenListView = new WarrenListView();
         }
         $('#content').html(this.warrenListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    okiList: function () {
+        if (!this.okiListView) {
+            this.okiListView = new OkiListView();
+        }
+        $('#content').html(this.okiListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    bcrtaList: function () {
+        if (!this.bcrtaListView) {
+            this.bcrtaListView = new BcrtaListView();
+        }
+        $('#content').html(this.bcrtaListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    ctcList: function () {
+        if (!this.ctcListView) {
+            this.ctcListView = new CtcListView();
+        }
+        $('#content').html(this.ctcListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    mtsList: function () {
+        if (!this.mtsListView) {
+            this.mtsListView = new MtsListView();
+        }
+        $('#content').html(this.mtsListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    sortaList: function () {
+        if (!this.sortaListView) {
+            this.sortaListView = new SortaListView();
+        }
+        $('#content').html(this.sortaListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    tankList: function () {
+        if (!this.tankListView) {
+            this.tankListView = new TankListView();
+        }
+        $('#content').html(this.tankListView.el);
+        this.headerView.selectMenuItem('highway-menu');
+    },
+
+    wctaList: function () {
+        if (!this.wctaListView) {
+            this.wctaListView = new WctaListView();
+        }
+        $('#content').html(this.wctaListView.el);
         this.headerView.selectMenuItem('highway-menu');
     },
 
