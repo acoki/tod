@@ -94,7 +94,11 @@ window.WarrenModel = Backbone.Model.extend({
 });
 
 window.WarrenCollection = Backbone.Collection.extend({
-  model: WarrenModel
+  model: WarrenModel,
+  comparator: function(warrenmodel) {
+    return warrenmodel.get("PID");
+      
+  }
   
 });
 

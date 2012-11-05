@@ -17,7 +17,7 @@ var DearbornListView = Backbone.View.extend({
         // el: $("#dearborn"),
 
         initialize: function () {
-            console.log("dearbornlv");
+            // console.log("dearbornlv");
             this.$el.empty();
             // var county = [{County: "Dearborn"}];
             // this.collection = new dearbornCollection(_.where(hc, county));

@@ -17,7 +17,7 @@ var TankListView = Backbone.View.extend({
         // el: $("#tank"),
 
         initialize: function () {
-            console.log("tanklv");
+            // console.log("tanklv");
             this.$el.empty();
             // var county = [{County: "Tank"}];
             // this.collection = new tankCollection(_.where(hc, county));

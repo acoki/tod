@@ -94,7 +94,11 @@ window.ButlerModel = Backbone.Model.extend({
 });
 
 window.ButlerCollection = Backbone.Collection.extend({
-  model: ButlerModel
+  model: ButlerModel,
+  comparator: function(butlermodel) {
+    return butlermodel.get("PID");
+      
+  }
   
 });
 

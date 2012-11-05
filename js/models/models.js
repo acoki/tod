@@ -101,10 +101,4 @@ window.HighwayCollection = Backbone.Collection.extend({
 dojo.addOnLoad(init);
 this.hc = new HighwayCollection();
 this.hm = new HighwayModel();
-console.log(hc);
-
-
-
-
-
-
+// console.log(hc);

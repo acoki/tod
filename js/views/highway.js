@@ -6,7 +6,7 @@ window.HighwayView = Backbone.View.extend({
 
     render:function () {
         $(this.el).html(this.template());
-            console.log("hello Highway");
+            // console.log("hello Highway");
         return this;
     }
 

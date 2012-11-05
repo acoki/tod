@@ -17,7 +17,7 @@ var ClermontListView = Backbone.View.extend({
         // el: $("#clermont"),
 
         initialize: function () {
-            console.log("clermontlv");
+            // console.log("clermontlv");
             this.$el.empty();
             // var county = [{County: "Clermont"}];
             // this.collection = new clermontCollection(_.where(hc, county));

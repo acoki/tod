@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/10");
       var query = new esri.tasks.Query();
         query.where = "TransitSystem = 'CTC'";
         query.returnGeometry = false;
@@ -115,11 +115,15 @@ window.CtcModel = Backbone.Model.extend({
 });
 
 window.CtcCollection = Backbone.Collection.extend({
-  model: CtcModel
+  model: CtcModel,
+  comparator: function(ctcmodel) {
+    return ctcmodel.get("PID");
+      
+  }
   
 });
 
 dojo.addOnLoad(init);
 this.ctccollection = new CtcCollection();
-this.tm = new CtcModel();
-console.log("CTC", ctccollection);
+this.ctcmodel = new CtcModel();
+// console.log("CTC", ctccollection);

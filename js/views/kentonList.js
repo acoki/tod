@@ -17,7 +17,7 @@ var KentonListView = Backbone.View.extend({
         // el: $("#kenton"),
 
         initialize: function () {
-            console.log("kentonlv");
+            // console.log("kentonlv");
             this.$el.empty();
             // var county = [{County: "Kenton"}];
             // this.collection = new kentonCollection(_.where(hc, county));

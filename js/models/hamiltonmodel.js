@@ -94,7 +94,11 @@ window.HamiltonModel = Backbone.Model.extend({
 });
 
 window.HamiltonCollection = Backbone.Collection.extend({
-  model: HamiltonModel
+  model: HamiltonModel,
+  comparator: function(hamiltonmodel) {
+    return hamiltonmodel.get("PID");
+      
+  }
   
 });
 

@@ -17,7 +17,7 @@ var ButlerListView = Backbone.View.extend({
         // el: $("#butler"),
 
         initialize: function () {
-            console.log("butlerlv");
+            // console.log("butlerlv");
             this.$el.empty();
             // var county = [{County: "Boone"}];
             // this.collection = new butlerCollection(_.where(hc, county));

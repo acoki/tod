@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/10");
       var query = new esri.tasks.Query();
         query.where = "TransitSystem = 'OKI'";
         query.returnGeometry = false;
@@ -122,4 +122,4 @@ window.OkiCollection = Backbone.Collection.extend({
 dojo.addOnLoad(init);
 this.okicollection = new OkiCollection();
 this.okimodel = new OkiModel();
-console.log("OKI", okicollection);
+// console.log("OKI", okicollection);

@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/10");
       var query = new esri.tasks.Query();
         query.where = "TransitSystem = 'SORTA'";
         query.returnGeometry = false;
@@ -115,11 +115,15 @@ window.SortaModel = Backbone.Model.extend({
 });
 
 window.SortaCollection = Backbone.Collection.extend({
-  model: SortaModel
+  model: SortaModel,
+  comparator: function(sortamodel) {
+    return sortamodel.get("PID");
+      
+  }
   
 });
 
 dojo.addOnLoad(init);
 this.sortacollection = new SortaCollection();
 this.sortamodel = new SortaModel();
-console.log("SORTA", sortacollection);
+// console.log("SORTA", sortacollection);

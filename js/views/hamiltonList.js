@@ -17,7 +17,7 @@ var HamiltonListView = Backbone.View.extend({
         // el: $("#hamilton"),
 
         initialize: function () {
-            console.log("hamiltonlv");
+            // console.log("hamiltonlv");
             this.$el.empty();
             // var county = [{County: "Hamilton"}];
             // this.collection = new hamiltonCollection(_.where(hc, county));

@@ -17,7 +17,7 @@ var BooneListView = Backbone.View.extend({
         // el: $("#boone"),
 
         initialize: function () {
-            console.log("boonelv");
+            // console.log("boonelv");
             this.$el.empty();
             // var county = [{County: "Boone"}];
             // this.collection = new booneCollection(_.where(hc, county));

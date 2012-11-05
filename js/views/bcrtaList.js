@@ -17,7 +17,7 @@ var BcrtaListView = Backbone.View.extend({
         // el: $("#bcrta"),
 
         initialize: function () {
-            console.log("bcrtalv");
+            // console.log("bcrtalv");
             this.$el.empty();
             // var county = [{County: "Bcrta"}];
             // this.collection = new bcrtaCollection(_.where(hc, county));

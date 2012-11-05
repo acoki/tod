@@ -6,7 +6,7 @@ window.TransitView = Backbone.View.extend({
 
     render:function () {
         $(this.el).html(this.template());
-			console.log("hello transit");
+			// console.log("hello transit");
         return this;
     }
 

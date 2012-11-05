@@ -94,7 +94,11 @@ window.KentonModel = Backbone.Model.extend({
 });
 
 window.KentonCollection = Backbone.Collection.extend({
-  model: KentonModel
+  model: KentonModel,
+  comparator: function(kentonmodel) {
+    return kentonmodel.get("PID");
+      
+  }
   
 });
 

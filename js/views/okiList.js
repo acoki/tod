@@ -17,7 +17,7 @@ var OkiListView = Backbone.View.extend({
         // el: $("#oki"),
 
         initialize: function () {
-            console.log("okilv");
+            // console.log("okilv");
             this.$el.empty();
             // var county = [{County: "Oki"}];
             // this.collection = new okiCollection(_.where(hc, county));

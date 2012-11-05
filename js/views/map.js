@@ -6,7 +6,7 @@ window.MapView = Backbone.View.extend({
 
     render:function () {
         $(this.el).html(this.template());
-            console.log("hello Map");
+            // console.log("hello Map");
         return this;
     }
 

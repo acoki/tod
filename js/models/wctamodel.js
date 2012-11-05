@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/10");
       var query = new esri.tasks.Query();
         query.where = "TransitSystem = 'WCTA'";
         query.returnGeometry = false;
@@ -115,11 +115,15 @@ window.WctaModel = Backbone.Model.extend({
 });
 
 window.WctaCollection = Backbone.Collection.extend({
-  model: WctaModel
+  model: WctaModel,
+  comparator: function(wctamodel) {
+    return wctamodel.get("PID");
+      
+  }
   
 });
 
 dojo.addOnLoad(init);
 this.wctacollection = new WctaCollection();
 this.wctamodel = new WctaModel();
-console.log("WCTA", wctacollection);
+// console.log("WCTA", wctacollection);

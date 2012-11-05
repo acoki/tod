@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/10");
       var query = new esri.tasks.Query();
         query.where = "TransitSystem = 'BCRTA'";
         query.returnGeometry = false;
@@ -115,11 +115,15 @@ window.BcrtaModel = Backbone.Model.extend({
 });
 
 window.BcrtaCollection = Backbone.Collection.extend({
-  model: BcrtaModel
+  model: BcrtaModel,
+  comparator: function(bcrtamodel) {
+    return bcrtamodel.get("PID");
+      
+  }
   
 });
 
 dojo.addOnLoad(init);
 this.bcrtacollection = new BcrtaCollection();
 this.bcrtamodel = new BcrtaModel();
-console.log("bcrta", bcrtacollection);
+// console.log("bcrta", bcrtacollection);

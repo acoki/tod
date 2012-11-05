@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" />
+    <!--The viewport meta tag is used to improve the presentation and behavior
+    of the samples on iOS devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    
+    <title>Boone County TIP Project Map</title>
+    
+    <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.1/js/dojo/dijit/themes/claro/claro.css">
+    <!-- ArcGIS API for JavaScript -->
+    <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.1compact">
+      
+    </script>
+    
+    <style type="text/css">
+      .page-map #mapcontent, #map {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+      html, body
+      {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+      }
+      .esriSimpleSlider
+       div
+      {
+        height: 30px !important;
+        width: 30px !important;
+      }
+    </style>
+    <script type="text/javascript">
+      dojo.require("esri.map");
+      dojo.require("esri.layers.FeatureLayer");
+      // dojo.require("esri.tasks.query");
+
+      var map;
+
+      function init() {
+        //onorientationchange doesn't always fire in a timely manner in Android so check for both orientationchange and resize 
+        var supportsOrientationChange = "onorientationchange" in window,
+          orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+        window.addEventListener(orientationEvent, function () {
+          orientationChanged();
+        }, false);
+
+        var initialExtent = new esri.geometry.Extent({"xmin":-9465759,"ymin":4697343,"xmax":-9328172,"ymax":4789067,"spatialReference":{"wkid":102100}});
+        map = new esri.Map("map", {
+          extent: initialExtent
+        });
+        var tiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://gis.oki.org/ArcGIS/rest/services/Maps/okibasemap_minimal/MapServer");
+        map.addLayer(tiledMapServiceLayer);
+
+        dojo.connect(map, "onLoad", function(evt) {
+          //add a feature layer
+        var content = "<b>PID</b>: ${PID} <br /><b>Facility</b>: ${Facility} <br /><b>Location</b>: ${Location} <br /><b>Description</b>: ${Description}";
+
+        var infoTemplate = new esri.InfoTemplate("TIP Details", content);
+        
+        map.infoWindow.resize(225,150);
+        var featureLayer = new esri.layers.FeatureLayer("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2",{
+          mode: esri.layers.FeatureLayer.MODE_ONDEMAND,
+          outFields: ["PID","Facility, Location, Description"],
+          infoTemplate: infoTemplate
+        });
+
+        map.addLayers([featureLayer]);
+        
+        });
+      }
+
+      function orientationChanged() {
+        // console.log("Orientation changed: " + window.orientation);
+        if(map){
+          map.reposition();
+          map.resize();
+        }
+      }
+
+
+      dojo.addOnLoad(init);
+    </script>
+  </head>
+  <body class="claro">
+        <div id="map"></div>
+  </body>
+
+</html>

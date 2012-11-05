@@ -6,7 +6,6 @@ var AppRouter = Backbone.Router.extend({
         "highway"           : "highway",
         "transit"           : "transit",
         "map"               : "map",
-        "highwayMap"       : "highwayMap",
         "highwayList"       : "highwayList",
         "butlerList"        : "butlerList",
         "booneList"         : "booneList",
@@ -16,7 +15,6 @@ var AppRouter = Backbone.Router.extend({
         "hamiltonList"      : "hamiltonList",
         "kentonList"        : "kentonList",
         "warrenList"        : "warrenList",
-        "transitList"       : "transitList",
         "okiList"           : "okiList",
         "bcrtaList"         : "bcrtaList",
         "ctcList"           : "ctcList",
@@ -37,7 +35,7 @@ var AppRouter = Backbone.Router.extend({
     home: function (id) {
         if (!this.homeView) {
             this.homeView = new HomeView();
-            console.log("hey homey");
+            // console.log("hey homey");
         }
         $('#content').html(this.homeView.el);
         this.headerView.selectMenuItem('home-menu');
@@ -56,15 +54,6 @@ var AppRouter = Backbone.Router.extend({
             this.mapView = new MapView();
         }
         $('#content').html(this.mapView.el);
-        this.headerView.selectMenuItem('map-menu');
-    },
-
-    highwayMap: function () {
-        if (!this.highwayMapView) {
-            this.highwayMapView = new HighwayMapView();
-            console.log("hey hmap");
-        }
-        $('#content').html( this.highwayMapView.el);
         this.headerView.selectMenuItem('map-menu');
     },
 
@@ -209,21 +198,11 @@ var AppRouter = Backbone.Router.extend({
         }
         $('#content').html(this.transitView.el);
         this.headerView.selectMenuItem('transit-menu');
-    },
-
-    transitList: function () {
-        if (!this.transitListView) {
-            this.transitListView = new TransitListView();
-        }
-        $('#content').html(this.transitListView.el);
-        this.headerView.selectMenuItem('transit-menu');
     }
-
+    
 });
 
-utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'TransitView', 'MapView', 'HighwayMapView'], function() {
+utils.loadTemplate(['HomeView', 'HeaderView', 'AboutView', 'HighwayView', 'TransitView', 'MapView'], function() {
     app = new AppRouter();
     Backbone.history.start();
 });
-
-

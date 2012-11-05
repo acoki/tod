@@ -94,7 +94,11 @@ window.DearbornModel = Backbone.Model.extend({
 });
 
 window.DearbornCollection = Backbone.Collection.extend({
-  model: DearbornModel
+  model: DearbornModel,
+  comparator: function(dearbornmodel) {
+    return dearbornmodel.get("PID");
+      
+  }
   
 });
 

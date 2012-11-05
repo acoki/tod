@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/10");
       var query = new esri.tasks.Query();
         query.where = "1=1";
         query.returnGeometry = false;
@@ -122,4 +122,4 @@ window.TransitCollection = Backbone.Collection.extend({
 dojo.addOnLoad(init);
 this.tc = new TransitCollection();
 this.tm = new TransitModel();
-console.log("TRANSIT", tc);
+// console.log("TRANSIT", tc);

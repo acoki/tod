@@ -1,4 +1,19 @@
-.contact-container { width:280px; height:350px; padding:5px; border:0px solid #aaa; margin:0 10px 10px 10px; float:left; font-family:sans-serif; color:#333; background-color:#eee; -moz-border-radius: 10px; border-radius: 10px;}
+.contact-container { width:280px; height:350px; padding:5px; border:0px solid #aaa; margin:0 10px 10px 10px; float:left; font-family:sans-serif; color:#333;   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(#b1b1b1));
+  
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #eeeeee, #b1b1b1);
+  
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #eeeeee, #b1b1b1);
+  
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #eeeeee, #b1b1b1);
+  
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b1b1b1');
+
+  
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #eeeeee, #b1b1b1); -moz-border-radius: 10px; border-radius: 10px;}
 .contact-container h2 { margin:0; font-weight:normal; }
 .contact-container h2 span { float:right; font-size:18px; line-height:24px; font-weight:normal; }
 .contact-container img { border-width:1px; border-style:solid; border-color:#fff; border-right-color:#aaa; border-bottom-color:#aaa; margin-right:10px; float:left; }

@@ -17,7 +17,7 @@ var WarrenListView = Backbone.View.extend({
         // el: $("#warren"),
 
         initialize: function () {
-            console.log("warrenlv");
+            // console.log("warrenlv");
             this.$el.empty();
             // var county = [{County: "Warren"}];
             // this.collection = new warrenCollection(_.where(hc, county));

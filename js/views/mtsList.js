@@ -17,7 +17,7 @@ var MtsListView = Backbone.View.extend({
         // el: $("#mts"),
 
         initialize: function () {
-            console.log("mtslv");
+            // console.log("mtslv");
             this.$el.empty();
             // var county = [{County: "Mts"}];
             // this.collection = new mtsCollection(_.where(hc, county));

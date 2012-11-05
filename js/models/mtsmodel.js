@@ -1,7 +1,7 @@
 dojo.require('esri.map');
 dojo.require('esri.tasks.query');
 function init () {
-var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/2");
+var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/services/OP/TOD_data/MapServer/10");
       var query = new esri.tasks.Query();
         query.where = "TransitSystem = 'MTS'";
         query.returnGeometry = false;
@@ -115,11 +115,15 @@ window.MtsModel = Backbone.Model.extend({
 });
 
 window.MtsCollection = Backbone.Collection.extend({
-  model: MtsModel
+  model: MtsModel,
+  comparator: function(mtsmodel) {
+    return mtsmodel.get("PID");
+      
+  }
   
 });
 
 dojo.addOnLoad(init);
 this.mtscollection = new MtsCollection();
 this.mtsmodel = new MtsModel();
-console.log("MTS", mtscollection);
+// console.log("MTS", mtscollection);

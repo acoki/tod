@@ -17,7 +17,7 @@ var CtcListView = Backbone.View.extend({
         // el: $("#ctc"),
 
         initialize: function () {
-            console.log("ctclv");
+            // console.log("ctclv");
             this.$el.empty();
             // var county = [{County: "Ctc"}];
             // this.collection = new ctcCollection(_.where(hc, county));

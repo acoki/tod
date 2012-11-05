@@ -94,7 +94,11 @@ window.BooneModel = Backbone.Model.extend({
 });
 
 window.BooneCollection = Backbone.Collection.extend({
-  model: HighwayModel
+  model: BooneModel,
+  comparator: function(boonemodel) {
+    return boonemodel.get("PID");
+      
+  }
   
 });
 

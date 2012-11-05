@@ -17,7 +17,7 @@ var HighwayListView = Backbone.View.extend({
         // el: $("#highwayList"),
 
         initialize: function () {
-            console.log("hlv");
+            // console.log("hlv");
             this.$el.empty();
             // var county = [{County: "Boone"}];
             // this.collection = new HighwayCollection(_.where(hc, county));

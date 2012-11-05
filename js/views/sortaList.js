@@ -17,7 +17,7 @@ var SortaListView = Backbone.View.extend({
         // el: $("#sorta"),
 
         initialize: function () {
-            console.log("sortalv");
+            // console.log("sortalv");
             this.$el.empty();
             // var county = [{County: "Sorta"}];
             // this.collection = new sortaCollection(_.where(hc, county));

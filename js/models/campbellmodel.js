@@ -94,7 +94,11 @@ window.CampbellModel = Backbone.Model.extend({
 });
 
 window.CampbellCollection = Backbone.Collection.extend({
-  model: CampbellModel
+  model: CampbellModel,
+  comparator: function(campbellmodel) {
+    return campbellmodel.get("PID");
+      
+  }
   
 });
 

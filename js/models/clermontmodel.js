@@ -94,7 +94,11 @@ window.ClermontModel = Backbone.Model.extend({
 });
 
 window.ClermontCollection = Backbone.Collection.extend({
-  model: ClermontModel
+  model: ClermontModel,
+  comparator: function(clermontmodel) {
+    return clermontmodel.get("PID");
+      
+  }
   
 });
 

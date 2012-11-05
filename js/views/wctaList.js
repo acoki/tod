@@ -17,7 +17,7 @@ var WctaListView = Backbone.View.extend({
         // el: $("#wcta"),
 
         initialize: function () {
-            console.log("wctalv");
+            // console.log("wctalv");
             this.$el.empty();
             // var county = [{County: "Wcta"}];
             // this.collection = new wctaCollection(_.where(hc, county));

@@ -17,7 +17,7 @@ var CampbellListView = Backbone.View.extend({
         // el: $("#campbell"),
 
         initialize: function () {
-            console.log("campbelllv");
+            // console.log("campbelllv");
             this.$el.empty();
             // var county = [{County: "Campbell"}];
             // this.collection = new campbellCollection(_.where(hc, county));
