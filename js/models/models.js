@@ -22,11 +22,11 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
                 Project_Type = fAttributes.Project_Type;
                 AQ_Conformity = fAttributes.AQ_Conformity;
                 Future_Sale_Date = fAttributes.Future_Sale_Date;
-                FY12 = fAttributes.FY12;
-                FY13 = fAttributes.FY13;
-                FY14 = fAttributes.FY14;
-                FY15 = fAttributes.FY15;
-                TotalCost = fAttributes.TotalCost;
+                FY12 = "$"+addCommas(fAttributes.FY12);
+                FY13 = "$"+addCommas(fAttributes.FY13);
+                FY14 = "$"+addCommas(fAttributes.FY14);
+                FY15 = "$"+addCommas(fAttributes.FY15);
+                TotalCost = "$"+addCommas(fAttributes.TotalCost);
 
                 data ={
                     PID: PID,
@@ -66,6 +66,18 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
             }
 
         });
+}
+function addCommas(nStr)
+{
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
 }
 
 window.HighwayModel = Backbone.Model.extend({

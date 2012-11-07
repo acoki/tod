@@ -26,14 +26,13 @@ var queryTask = new esri.tasks.QueryTask("http://gis.oki.org/ArcGIS/rest/service
                 Air_Quality = fAttributes.Air_Quality;
                 Type = fAttributes.Type;
                 State_FY = fAttributes.State_FY;
-                Fiscally_Constrained = fAttributes.Fiscally_Constrained;
-                Federal_Funding = fAttributes.Federal_Funding;
+                Federal_Funding = "$"+addCommas(fAttributes.Federal_Funding);
                 Federal_Funding_Source = fAttributes.Federal_Funding_Source;
-                State_Funding = fAttributes.State_Funding;
+                State_Funding = "$"+addCommas(fAttributes.State_Funding);
                 State_Funding_Source = fAttributes.State_Funding_Source;
-                Local_Funding = fAttributes.Local_Funding;
+                Local_Funding = "$"+addCommas(fAttributes.Local_Funding);
                 Local_Funding_Source = fAttributes.Local_Funding_Source;
-
+                
                 data ={
                     ID: ID,
                     STIP: STIP,
